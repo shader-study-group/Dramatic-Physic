@@ -1,0 +1,12 @@
+# Godot 4+ specific ignores
+
+# Godot cache
+.godot/
+/android/
+
+# binary generated from CSV files in translations system 
+*.translation
+
+
+
+# IDE and tools ignores
