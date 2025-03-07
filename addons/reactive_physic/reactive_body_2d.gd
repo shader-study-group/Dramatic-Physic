@@ -1,10 +1,14 @@
+
+@icon("res://icon.svg")
+class_name ReactiveBody2D 
 extends RigidBody2D
+
 
 const run_gap: float = 0.62 # sec
 
 
 var speed: float = 0.1
-var final_force = Vector2(0.0, 0.0)
+var final_force: Vector2 = Vector2(0.0, 0.0)
 #var floor: PhysicsBody2D = null
 var floor: Object = null
  
