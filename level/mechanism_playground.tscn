@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0gdjdfv0dkfw"]
+[gd_scene load_steps=4 format=3 uid="uid://d0gdjdfv0dkfw"]
 
 [ext_resource type="PackedScene" uid="uid://ymbelfegvnkp" path="res://floors/floor.tscn" id="1_33sla"]
 [ext_resource type="PackedScene" uid="uid://cyx5klispv1cl" path="res://player/player.tscn" id="2_kx6l0"]
+[ext_resource type="PackedScene" uid="uid://mj5275mif4rs" path="res://objects/ball.tscn" id="3_kwhet"]
 
 [node name="MechanismPlayground" type="Node"]
 
@@ -20,5 +21,9 @@ rotation = -0.280998
 position = Vector2(1849, 578)
 rotation = -1.56381
 
+[node name="Ball" parent="." instance=ExtResource("3_kwhet")]
+position = Vector2(1091, 778)
+continuous_cd = 1
+
 [node name="Player" parent="." instance=ExtResource("2_kx6l0")]
-position = Vector2(1259, 688)
+position = Vector2(1158, 743)

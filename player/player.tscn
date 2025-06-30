@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cyx5klispv1cl"]
 
 [ext_resource type="Texture2D" uid="uid://by45os43e136i" path="res://player/player.png" id="1_qsqfk"]
-[ext_resource type="Script" path="res://player/player.gd" id="1_wihvd"]
+[ext_resource type="Script" uid="uid://bfepjr8dwtplr" path="res://player/player.gd" id="1_wihvd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tdu28"]
 animations = [{
@@ -24,6 +24,7 @@ lock_rotation = true
 contact_monitor = true
 max_contacts_reported = 8
 script = ExtResource("1_wihvd")
+metadata/_custom_type_script = "uid://cvt40tnsi8mp1"
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

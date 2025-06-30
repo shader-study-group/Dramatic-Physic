@@ -1,35 +1,21 @@
 extends ReactiveBody2D
 
-enum States {GROUNDED, JUMPING}
-
-const run_gap: float = 0.62 # sec
-var speed: float = 0.1
 var floor: PhysicsBody2D = null
- 
 
-	 
-func _unhandled_input(event: InputEvent) -> void:
-	# null detection included
-	var force: Vector2 = Vector2(0.0, 0.0);
-	if floor is PhysicsBody2D:
-		if event.is_action("move_left"):
-			force.x += 100000 * 2 
-		elif event.is_action("move_right"):
-			force.x -= 100000 * 2
-		force.y += 200000
-		if event.is_action_pressed("jump"):
-			force.y += 2000000
-			
-		apply_reactive_force(floor, force);
-		floor = null
+
+func _physics_process(delta: float) -> void:
+	# call ReactiveBody2D's _physics_process
+	super(delta)
 	
-	#get_viewport().set_input_as_handled()
-		
+	if floor is PhysicsBody2D:
+		apply_reactive_force(floor, Vector2(0.0, 8000.0));
+	floor = null
+
 # allow get_contact_count
 func _ready() -> void:
 	contact_monitor = true
 	max_contacts_reported = 4
-			
+
 # https://docs.godotengine.org/en/stable/classes/class_physicsdirectbodystate2d.html
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	# call ReactiveBody2D's _integrate_forces
@@ -37,6 +23,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	
 	var i := 0
 	while i < state.get_contact_count():
+		
 		var normal := state.get_contact_local_normal(i)
 		if normal.dot(Vector2.UP) > 0.9: # this can be dialed in
 			floor = state.get_contact_collider_object(i)
