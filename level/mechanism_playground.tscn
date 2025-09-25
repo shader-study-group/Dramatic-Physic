@@ -26,4 +26,4 @@ position = Vector2(1091, 778)
 continuous_cd = 1
 
 [node name="Player" parent="." instance=ExtResource("2_kx6l0")]
-position = Vector2(1158, 743)
+position = Vector2(1220, 747)
