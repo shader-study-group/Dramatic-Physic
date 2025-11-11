@@ -38,11 +38,11 @@ func _ready() -> void:
 # Slow time, without messing with physic
 func _physics_process(delta: float) -> void:
 	super(delta)
-	if Input.is_anything_pressed():
-		Engine.time_scale = 0.05
-	else:
-		Engine.time_scale = 1
-	pass
+	#if Input.is_anything_pressed():
+		#Engine.time_scale = 0.05
+	#else:
+		#Engine.time_scale = 1
+	#pass
 			
 			
 # https://docs.godotengine.org/en/stable/classes/class_physicsdirectbodystate2d.html
