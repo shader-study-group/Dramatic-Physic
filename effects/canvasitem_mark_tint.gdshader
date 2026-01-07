@@ -1,13 +1,14 @@
 shader_type canvas_item;
 
+uniform vec2 delta = vec2(0.01, 0.1);  // left up 
+
 void vertex() {
 	// Called for every vertex the material is visible on.
 }
 
 void fragment() {
 	// Called for every pixel the material is visible on.
-
-	COLOR.b = 1.0;
+	COLOR.r += texture(TEXTURE, UV + delta).r;
 }
 
 //void light() {

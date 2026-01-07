@@ -1,15 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://ymbelfegvnkp"]
+[gd_scene load_steps=6 format=3 uid="uid://ymbelfegvnkp"]
 
+[ext_resource type="Script" uid="uid://eps15e2mjdyt" path="res://floors/floor.gd" id="1_d1v3c"]
 [ext_resource type="Texture2D" uid="uid://b1vbwrqy1fe85" path="res://floors/floor.png" id="1_psaob"]
-[ext_resource type="Shader" uid="uid://b31bd1w2nd6kg" path="res://effects/canvasitem_tint.gdshader" id="1_uh3sr"]
+[ext_resource type="Shader" uid="uid://bwltmcb7t08gh" path="res://effects/canvasitem_mark_tint.gdshader" id="2_d1v3c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lvkua"]
-shader = ExtResource("1_uh3sr")
+shader = ExtResource("2_d1v3c")
+shader_parameter/delta = Vector2(0.01, 0.1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_73ori"]
 size = Vector2(995, 97.3125)
 
-[node name="Floor" type="StaticBody2D"]
+[node name="Floor" type="StaticBody2D" node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_d1v3c")
+sprite = NodePath("Sprite2D")
+disco_range = 0.0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -17,4 +22,5 @@ material = SubResource("ShaderMaterial_lvkua")
 texture = ExtResource("1_psaob")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_73ori")
