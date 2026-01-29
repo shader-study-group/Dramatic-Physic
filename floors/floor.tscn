@@ -1,15 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://ymbelfegvnkp"]
+[gd_scene format=3 uid="uid://ymbelfegvnkp"]
 
 [ext_resource type="Texture2D" uid="uid://b1vbwrqy1fe85" path="res://floors/floor.png" id="1_psaob"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_73ori"]
 size = Vector2(995, 97.3125)
 
-[node name="Floor" type="StaticBody2D"]
+[node name="Floor" type="StaticBody2D" unique_id=1142681332]
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1949118500]
 texture = ExtResource("1_psaob")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=541931136]
 shape = SubResource("RectangleShape2D_73ori")

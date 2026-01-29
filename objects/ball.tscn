@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://mj5275mif4rs"]
+[gd_scene format=3 uid="uid://mj5275mif4rs"]
 
 [ext_resource type="Texture2D" uid="uid://cqbg628pare5w" path="res://objects/ball.png" id="1_2eyxl"]
 [ext_resource type="Script" uid="uid://cisf8k1ggba20" path="res://objects/ball.gd" id="1_n16w4"]
@@ -17,16 +17,16 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_472ul"]
 radius = 23.0
 
-[node name="Ball" type="RigidBody2D"]
+[node name="Ball" type="RigidBody2D" unique_id=2030565420]
 max_contacts_reported = 8
 script = ExtResource("1_n16w4")
 metadata/_custom_type_script = "uid://cvt40tnsi8mp1"
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1697415923]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_w1byy")
 animation = &"idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2084701485]
 shape = SubResource("CircleShape2D_472ul")

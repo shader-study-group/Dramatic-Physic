@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Dramatic Physic"
-config/features=PackedStringArray("4.5", "Mobile")
+config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
 [display]
@@ -49,6 +49,11 @@ jump={
 ]
 }
 
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
 [rendering]
 
+rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
